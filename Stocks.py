@@ -15,9 +15,9 @@ commPaidPost = sold*commRate
 totalComm = commPaidPre + commPaidPost
 profit = sold-amount-totalComm
 #Print Statements with formatting
-print(f"Amount paid for stock: ${amount:.2f}")
-print(f"Commission paid on the purchase: ${commPaidPre:.2f}")
-print(f"Amount the stock sold for: ${sold:.2f}")
-print(f"Commission paid on the sale: ${commPaidPost:.2f}")
-print(f"Total commission paid: ${totalComm:.2f}")
-print(f"Profit (positive or negative): ${profit:.2f}")
+print(f"Amount paid for stock: ${amount:.1f}")
+print(f"Commission paid on the purchase: ${commPaidPre:.1f}")
+print(f"Amount the stock sold for: ${sold:.1f}")
+print(f"Commission paid on the sale: ${commPaidPost:.1f}")
+print(f"Total commission paid: ${totalComm:.1f}")
+print(f"Profit (positive or negative): ${profit:.1f}")
