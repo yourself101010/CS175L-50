@@ -1,5 +1,6 @@
 """
 Name: Tennessee Tremain
+Course: CS175-L
 Program: Restaurant
 """
 
