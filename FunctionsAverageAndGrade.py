@@ -1,8 +1,12 @@
 """
 Name: Tennessee Tremain
 Course: CS-175L
-Program: Functions Average and Grade Assignment
+Program: Functions Average and Grade Assignment with Random
 """
+#Import random
+import myRandom
+
+
 #Takes in a score argument and returns letter grade
 def determineGrade(score):
     if (score >= 90):
@@ -29,36 +33,25 @@ def repeat():
         return False
 
 #Make sure grade is in range
-def valGrade(scoreNum):
-    sVar = float(input("Enter score " + str(scoreNum) + ": "))
-    while (sVar < 0) or (sVar > 100):
-        print("Outside of range!  Try again!")
-        sVar = float(input("Enter score " + str(scoreNum) + ": "))
-    return sVar
+def getGrade():
+    return myRandom.gen(1,100)
     
 #Main program...print statements/using functions
 def main():
     r = True
+    add = 0
     while r:
-        t1 = valGrade(1)
-        t2 = valGrade(2)
-        t3 = valGrade(3)
-        t4 = valGrade(4)
-        t5 = valGrade(5)
-        l1 = determineGrade(t1)
-        l2 = determineGrade(t2)
-        l3 = determineGrade(t3)
-        l4 = determineGrade(t4)
-        l5 = determineGrade(t5)
-        average = calcAverage(t1,t2,t3,t4,t5)
-        la = determineGrade(average)
+        scores = []
         print("Score          Numeric Grade     Letter Grade")
         print("--------------------------------------------------")
-        print(f"Score 1:{t1:>15.1f}{l1:>17}")
-        print(f"Score 2:{t2:>15.1f}{l2:>17}")
-        print(f"Score 3:{t3:>15.1f}{l3:>17}")
-        print(f"Score 4:{t4:>15.1f}{l4:>17}")
-        print(f"Score 5:{t5:>15.1f}{l5:>17}")
+        for i in range(1,6,1):
+            t = getGrade()
+            l = determineGrade(t)
+            add+=t
+            scores.append(t)
+            print(f"Score {i}:{t:>15.1f}{l:>17}")
+        average = calcAverage(scores[0],scores[1],scores[2],scores[3],scores[4])
+        la = determineGrade(average)
         print(f"Average:{average:>15.1f}{la:>17}")
         r = repeat()
 
